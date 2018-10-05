@@ -4,6 +4,7 @@ int myX;
 int myY;
 int y;
 int x;
+int dot;
 
 
 void setup()
@@ -25,11 +26,12 @@ void draw()
 		}
 
 	}
-	
+    text("Total Dots: " + dot, 500, 800);
 }
 void mousePressed()
 {
 	redraw();
+	dot = 0;
 }
 class Die //models one single dice cube
 {
@@ -37,7 +39,7 @@ class Die //models one single dice cube
 	
 	Die(int x, int y) //constructor
 	{
-		int dots;
+		
 		myX = x;
 		myY= y;
 	}
@@ -52,16 +54,18 @@ class Die //models one single dice cube
 		fill(0);
 		if(roll == 1){
 			ellipse(myX + 50, myY + 50, 10, 10);
-
+			dot = dot + 1;
 		}else if(roll == 2){
 
 			ellipse(myX + 25, myY + 50, 10, 10);
 			ellipse(myX + 75, myY + 50, 10, 10);
+			dot = dot + 2;
 		}	else if(roll == 3){
 
 			ellipse(myX + 25, myY + 25, 10, 10);
 			ellipse(myX + 50, myY + 50, 10, 10);
 			ellipse(myX + 75, myY + 75, 10, 10);
+			dot = dot + 3;
 
 		}	else if(roll == 4){
 
@@ -69,6 +73,7 @@ class Die //models one single dice cube
 			ellipse(myX + 75, myY + 25, 10, 10);
 			ellipse(myX + 25, myY + 75, 10, 10);
 			ellipse(myX + 75, myY + 75, 10, 10);
+			dot = dot + 4;
 
 		}	else if(roll == 5){
 
@@ -78,6 +83,8 @@ class Die //models one single dice cube
 			ellipse(myX + 75, myY + 75, 10, 10);
 	
 			ellipse(myX + 50, myY + 50, 10, 10);
+			dot = dot + 5;
+
 
 		}else if(roll == 6){
 
@@ -87,6 +94,7 @@ class Die //models one single dice cube
 			ellipse(myX + 75, myY + 25, 10, 10);
 			ellipse(myX + 75, myY + 50, 10, 10);
 			ellipse(myX + 75, myY + 75, 10, 10);
+			dot = dot + 6;
 		
 
 
